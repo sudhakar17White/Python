@@ -1,0 +1,17 @@
+Repetitive tasks are ripe for automation. It is common for developers and system administrators to automate routine tasks like health checks and file backups with shell scripts. However, as those tasks become more complex, shell scripts may become harder to maintain.
+
+Fortunately, we can use Python instead of shell scripts for automation. Python provides methods to run shell commands, giving us the same functionality of those shells scripts, with additional support from Python's ecosystem. Learning how to run shell commands in Python opens the door for us to automate computer tasks in a structured and scalable way.
+
+In this article, we will look at the various ways to execute shell commands in Python, and the ideal situation to use each method.
+
+Using os.system to Run a Command
+Python allows us to immediately execute a shell command that's stored in a string using the os.system() function. Let's start by creating a new Python file called echo_adelle.py and enter the following:
+
+import os
+os.system("echo Hello from the other side!")
+The first thing we do in our Python file is import the os module, which contains the system function that can execute shell commands. The next line does exactly that, runs the echo command in our shell through Python.
+
+In your Terminal, run this file with using the following command, and you should see the corresponding output:
+
+$ python3 echo_adelle.py
+Hello from the other side!
