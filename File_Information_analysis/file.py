@@ -1,5 +1,5 @@
 import subprocess
-
+import os
 f=""
 lowletter=""
 upletter=""
@@ -63,7 +63,10 @@ def opeartionText():
                 symbol=symbol+x[i]
             i+=1
 
-
+def chocie():
+    print("---------------File Info------------")
+    print("------------------------------------")
+    print()
 
 while ch!="exit":
     print("__________________________________")
@@ -72,22 +75,36 @@ while ch!="exit":
     listfile=subprocess.run(["ls"])
     print(listfile.returncode)
     print("__________________________________")
-    file=input()
-    mode=input()
-    f=open(file,mode)
-    bannerList()
+    print("Commond are ->\n1.dir(to basic operation like(cat,pwd))\n2.file(Operation of file)")
     ch=input()
-    if ch=="exit":
-        exit(0)
-    elif ch=="1" or ch=="all":
-        opeartionText()
-        display()
-    elif ch=="uc" or ch=="upcount":
-        uppercount()
-    elif ch=="lc" or ch=="locount":
-        lowercount()
-    elif ch=="nc":
-        Number()
-    elif ch=="sc":
-        Symbol()
+    if ch=="dir":
+        chocie()
+        cf=input()
+        if cf=="view" or cf=="v":
+            print("File Name to Perview:",end="")
+            fif=input()
+            os.system("cat "+fif)
+        elif cf=="path" or cf=="p":
+            os.system("pwd")
+        
+    elif ch=="file":
+        print("Type File Name:",end="")
+        file=input()
+        mode=input()
+        f=open(file,mode)
+        bannerList()
+        ch=input()
+        if ch=="exit":
+            exit(0)
+        elif ch=="1" or ch=="all":
+            opeartionText()
+            display()
+        elif ch=="uc" or ch=="upcount":
+            uppercount()
+        elif ch=="lc" or ch=="locount":
+            lowercount()
+        elif ch=="nc":
+            Number()
+        elif ch=="sc":
+            Symbol()
 
