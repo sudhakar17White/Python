@@ -39,6 +39,7 @@ def bannerList():
     print("6.Symbol,Count(sc) ")
     print("7.Exit(x)")
 
+
 def opeartionText():
    
     global lowletter
