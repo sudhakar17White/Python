@@ -31,12 +31,13 @@ def display():
 
 def bannerList():
     print("---------------------------Opreation in TxT File----------------------------")
-    print("1.Operation all Text Details ")
-    print("2.Upper case Letter,Count(uc) ")
-    print("3.Lower case Letter,Count(lc) ")
-    print("4.Number,Count(nc) ")
-    print("5.Symbol,Count(sc) ")
-    print("6.Exit(x)")
+    print("1.Modifiy File Text File")
+    print("2.Operation all Text Details ")
+    print("3.Upper case Letter,Count(uc) ")
+    print("4.Lower case Letter,Count(lc) ")
+    print("5.Number,Count(nc) ")
+    print("6.Symbol,Count(sc) ")
+    print("7.Exit(x)")
 
 def opeartionText():
    
@@ -64,9 +65,13 @@ def opeartionText():
             i+=1
 
 def chocie():
-    print("---------------File Info------------")
+    print("---------------Dir Info------------")
     print("------------------------------------")
-    print()
+    print("1.View of File(v or view)")
+    print("2.Path of current File (path or p)")
+
+    
+
 
 while ch!="exit":
     print("__________________________________")
@@ -90,13 +95,15 @@ while ch!="exit":
     elif ch=="file":
         print("Type File Name:",end="")
         file=input()
-        mode=input()
-        f=open(file,mode)
+        
+        f=open(file)
         bannerList()
         ch=input()
         if ch=="exit":
             exit(0)
-        elif ch=="1" or ch=="all":
+        elif ch=="modifiy" or ch=="m":
+            subprocess.run(["xdg-open",file])
+        elif ch=="a" or ch=="all":
             opeartionText()
             display()
         elif ch=="uc" or ch=="upcount":
